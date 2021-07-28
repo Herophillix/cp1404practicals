@@ -8,4 +8,4 @@ Emoji | Code | Description
 📝 | `:pencil:` | New Practical
 ✏️ | `:pencil2:` | Refactor
 📄 | `:page_facing_up:` | Work In Progress
-🗑️ | `:waste_basket:` | Delete Files
+🗑️ | `:wastebasket:` | Delete Files
