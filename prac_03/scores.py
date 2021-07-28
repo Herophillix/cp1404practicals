@@ -40,6 +40,7 @@ def main():
         score = random.randrange(0, 100)
         new_file.write("Your score is: {0}\n".format(score))
         new_file.write("Your grade is: {0}\n".format(assess_grade(score)))
+    new_file.close()
 
 
 if __name__ == "__main__":
