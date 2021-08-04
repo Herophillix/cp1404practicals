@@ -153,19 +153,19 @@ def print_subjects_table(subjects):
         table.add_buffer()
 
     # add all the analyzed data into separate rows
-    min_columns = [Cell('Min')]
-    max_columns = [Cell('Max')]
-    average_columns = [Cell('Average')]
+    min_rows = [Cell('Min')]
+    max_rows = [Cell('Max')]
+    average_rows = [Cell('Average')]
     for subject in subjects:
-        min_columns.append(Cell(str(subject.min_score()), '>'))
-        max_columns.append(Cell(str(subject.max_score()), '>'))
-        average_columns.append(Cell(str(subject.average_score()), '>'))
+        min_rows.append(Cell(str(subject.min_score()), '>'))
+        max_rows.append(Cell(str(subject.max_score()), '>'))
+        average_rows.append(Cell(str(subject.average_score()), '>'))
 
-    table.add_row(min_columns)
+    table.add_row(min_rows)
     table.add_buffer()
-    table.add_row(max_columns)
+    table.add_row(max_rows)
     table.add_buffer()
-    table.add_row(average_columns)
+    table.add_row(average_rows)
     table.add_buffer()
 
     table.print_table()
