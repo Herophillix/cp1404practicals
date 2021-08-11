@@ -9,6 +9,7 @@ def main():
     text = input("Input text: ")
 
     for word in text.split():
+        word = word.lower()
         if word in count_of_words:
             count_of_words[word] += 1
         else:
