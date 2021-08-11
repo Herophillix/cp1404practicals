@@ -25,7 +25,7 @@ def write_file(friends: dict):
     """Write the dictionary into a file"""
     file = open(FRIENDS_DIRECTORY, 'w')
     for name, address in friends.items():
-        file.write("{0},{1}\n".format(name, address))
+        file.write("{0},{1}".format(name, address))
     file.close()
 
 
