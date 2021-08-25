@@ -27,7 +27,6 @@ def main():
     """Add days into a date"""
     today = date.today()
     current_date = MyDate(today.day, today.month, today.year)
-    current_date = MyDate(1, 1, 2021)
 
     print("The current date is {0}".format(current_date))
     day = get_input_int("How many days do you want to add?: ", min_range=0)
