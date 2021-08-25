@@ -1,6 +1,7 @@
 """
 Describe many people in a table
 """
+import math
 from person import Person
 from table import *
 
@@ -14,16 +15,21 @@ def get_input(prompt):
     return user_input
 
 
-def get_input_int(prompt):
+def get_input_int(prompt, min_range=-math.inf, max_range=math.inf):
     """Get user input as integer"""
     is_input_valid = False
     user_input = 0
+
     while not is_input_valid:
         try:
             user_input = int(input(prompt))
-            is_input_valid = True
+            if not min_range <= user_input <= max_range:
+                print("Please put in value within range {0} - {1}".format(min_range, max_range))
+            else:
+                is_input_valid = True
         except ValueError:
-            print("Error, please put a valid integer")
+            print("Please input a valid integer")
+
     return user_input
 
 
@@ -55,7 +61,7 @@ def main():
         print("Person {0}".format(i + 1))
         first_name = get_input("First Name: ")
         last_name = get_input("Last Name: ")
-        age = get_input_int("Age: ")
+        age = get_input_int("Age: ", min_range=0)
         new_person = Person(first_name, last_name, age)
         people.append(new_person)
 
