@@ -9,7 +9,7 @@ MONTH_31 = (1, 3, 5, 7, 8, 10, 12)
 def get_max_day(month: int, year: int):
     """Get the maximum day based on the month and year"""
     if month in MONTH_29:
-        max_day = 29 if year % 4 == 0 else 28
+        max_day = 29 if year % 4 == 0 and (year % 400 == 0 or year % 100 != 0) else 28
     elif month in MONTH_30:
         max_day = 30
     else:
