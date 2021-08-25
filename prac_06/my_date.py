@@ -7,6 +7,7 @@ MONTH_31 = (1, 3, 5, 7, 8, 10, 12)
 
 
 def get_max_day(month: int, year: int):
+    """Get the maximum day based on the month and year"""
     if month in MONTH_29:
         max_day = 29 if year % 4 == 0 else 28
     elif month in MONTH_30:
@@ -43,6 +44,7 @@ class MyDate:
         return "{0:>2}-{1:>2}-{2}".format(str(self.day).zfill(2), str(self.month).zfill(2), self.year)
 
     def add_day(self, day: int):
+        """Add days to the date"""
         if day <= 0:
             return
 

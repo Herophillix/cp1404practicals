@@ -1,5 +1,5 @@
 """
-Class for printing values in a table
+Class for printing data in a table
 """
 
 

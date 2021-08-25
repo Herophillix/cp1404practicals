@@ -5,6 +5,7 @@ from enum import IntEnum
 
 
 class TypingStyle(IntEnum):
+    """Typing style of a programming language"""
     STATIC = 0
     DYNAMIC = 1
 

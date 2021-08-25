@@ -9,6 +9,7 @@ MENU = "Menu:\nd) Drive\nr) Refuel\nq) Quit"
 
 
 def get_input(prompt, valid_input=(), capitalize=False):
+    """Get input as raw value"""
     is_input_valid = False
     user_input = ""
 
@@ -31,6 +32,7 @@ def get_input(prompt, valid_input=(), capitalize=False):
 
 
 def get_input_int(prompt, min_range=-math.inf, max_range=math.inf):
+    """Get input as integer"""
     is_input_valid = False
     user_input = 0
 

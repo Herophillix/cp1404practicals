@@ -7,6 +7,7 @@ from my_date import MyDate
 
 
 def get_input_int(prompt, min_range=-math.inf, max_range=math.inf):
+    """Get input as integer"""
     is_input_valid = False
     user_input = 0
 
