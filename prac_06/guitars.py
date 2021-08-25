@@ -48,8 +48,9 @@ def main():
     if len(guitars) > 0:
         print("These are my guitars:")
         for i, guitar in enumerate(guitars):
-            print("Guitar {0}: {1:<20} ({2}), worth ${3:10,.2f} {4}".format(i + 1, guitar.name, guitar.year, guitar.cost,
-                                                                            "(vintage)" if guitar.is_vintage() else ""))
+            print(
+                "Guitar {0}: {1:<20} ({2}), worth ${3:10,.2f} {4}".format(i + 1, guitar.name, guitar.year, guitar.cost,
+                                                                          "(vintage)" if guitar.is_vintage() else ""))
 
 
 if __name__ == "__main__":
