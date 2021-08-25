@@ -15,7 +15,7 @@ class Cell:
 
 
 class Table:
-    """Table to print scores in a nice format"""
+    """Table to print data in a nice format"""
     buffer = "buffer"
 
     def __init__(self):
