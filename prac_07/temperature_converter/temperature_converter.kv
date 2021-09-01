@@ -5,18 +5,15 @@ BoxLayout:
         size_hint_y: 0.3333
         Label:
             text: "Temperature Converter"
-            size_hint_x: 0.8
-        Button:
-            text: "Swap"
-            size_hint_x: 0.2
-            on_press: app.swap()
     GridLayout:
         rows: 2
         cols: 3
         size_hint_y: 0.6666
         Label:
             text: app.input_unit
-        Label:
+        Button:
+            text: "Swap"
+            on_press: app.swap()
         Label:
             text: app.output_unit
         TextInput:
