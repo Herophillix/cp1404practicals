@@ -19,7 +19,7 @@ class TemperatureConverterApp(App):
 
     def build(self):
         self.title = "Temperature Converter"
-        Window.size = (960, 540)
+        Window.size = (480, 270)
         self.root = Builder.load_file("temperature_converter.kv")
         self.sort_units()
         return self.root

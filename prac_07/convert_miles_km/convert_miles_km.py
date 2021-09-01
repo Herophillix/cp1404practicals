@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
@@ -18,6 +19,7 @@ class DistanceConverterApp(App):
 
     def build(self):
         self.title = "Distance Converter"
+        Window.size = (480, 270)
         self.root = Builder.load_file("convert_miles_km.kv")
         return self.root
 
