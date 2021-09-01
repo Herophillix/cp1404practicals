@@ -1,0 +1,20 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: mi_input
+            on_text: app.convert()
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: "Up"
+                on_press: app.increment(1)
+            Button:
+                text: "Down"
+                on_press: app.increment(-1)
+    # Button:
+    #     text: "Convert km to mi"
+    #     on_press: app.convert()
+    Label:
+        text: app.km_output
