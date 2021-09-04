@@ -1,0 +1,25 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.3333
+        Label:
+            text: "Temperature Converter"
+    GridLayout:
+        rows: 2
+        cols: 3
+        size_hint_y: 0.6666
+        Label:
+            text: app.input_unit
+        Button:
+            text: "Swap"
+            on_press: app.swap()
+        Label:
+            text: app.output_unit
+        TextInput:
+            text: app.input
+            on_text: app.convert(self.text)
+        Label:
+            text: "="
+        Label:
+            text: app.output

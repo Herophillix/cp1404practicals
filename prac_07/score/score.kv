@@ -1,0 +1,21 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: "Clear"
+            on_press: app.clear()
+            size_hint_x: 0.2
+        TextInput:
+            text: ""
+            size_hint_x: 0.8
+            id: score
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: "Calculate"
+            on_press: app.check_score(score.text)
+            size_hint_x: 0.2
+        Label:
+            text: app.result
+            size_hint_x: 0.8
