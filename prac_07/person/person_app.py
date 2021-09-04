@@ -7,6 +7,7 @@ FILE_DIRECTORY = "people_database.txt"
 
 
 class PersonApp(App):
+    """Display information of people"""
     information = StringProperty()
 
     def __init__(self, **kwargs):
@@ -32,17 +33,20 @@ class PersonApp(App):
         return self.root
 
     def create_widgets(self):
+        """Create buttons for people"""
         for name in self.people.keys():
             new_button = Button(text=name)
             new_button.bind(on_press=self.display_info)
             self.root.ids.person_holder.add_widget(new_button)
 
     def display_info(self, instance):
+        """Display the information"""
         self.information = str(self.people[instance.text])
         return
 
 
 def get_int(text: str):
+    """Get an int from a string with error checking"""
     try:
         return_value = int(text)
         return return_value

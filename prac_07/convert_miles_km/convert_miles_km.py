@@ -7,6 +7,7 @@ MILES_TO_KM = 1.60934
 
 
 def get_float(text: str):
+    """Get a float from a string with error checking"""
     try:
         return_value = float(text)
         return return_value
@@ -15,9 +16,11 @@ def get_float(text: str):
 
 
 class DistanceConverterApp(App):
+    """Application to convert miles to kilometer"""
     km_output = StringProperty()
 
     def build(self):
+        """Build Function"""
         self.title = "Distance Converter"
         Window.size = (480, 270)
         self.root = Builder.load_file("convert_miles_km.kv")

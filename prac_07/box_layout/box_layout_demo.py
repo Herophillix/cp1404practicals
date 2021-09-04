@@ -4,9 +4,11 @@ from kivy.properties import StringProperty
 
 
 class BoxLayoutDemo(App):
+    """Demo of the box layout"""
     message = StringProperty("Input your name")
 
     def build(self):
+        """Build Function"""
         self.title = "Greeter"
         self.root = Builder.load_file("box_layout.kv")
         return self.root
