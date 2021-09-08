@@ -29,6 +29,7 @@ class Taxi(Car):
         if self.is_fare_started:
             self.current_fare_distance = distance_travelled
             self.is_fare_started = False
+        return distance_travelled
 
     def get_fare(self):
         """Get the price of the taxi ride"""
