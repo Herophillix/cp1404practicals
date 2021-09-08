@@ -4,12 +4,12 @@ Simulate movement of a taxi
 from taxi import Taxi
 from silver_service_taxi import SilverServiceTaxi
 MENU = "q)uit, c)hoose taxi, d)rive"
-taxis = (Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4))
+TAXIS = (Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4))
 
 
 def print_taxis_available():
     """Print all the taxis that are available"""
-    for i, taxi in enumerate(taxis):
+    for i, taxi in enumerate(TAXIS):
         print("{0} - {1}".format(i, taxi))
 
 
@@ -18,8 +18,8 @@ def choose_taxi():
     print_taxis_available()
     try:
         taxi_choice = int(input("Choose taxi: "))
-        if 0 <= taxi_choice <= len(taxis) - 1:
-            return taxis[taxi_choice]
+        if 0 <= taxi_choice <= len(TAXIS) - 1:
+            return TAXIS[taxi_choice]
         else:
             print("Invalid taxi choice")
     except ValueError:
@@ -39,9 +39,9 @@ def drive_taxi(current_taxi):
             else:
                 current_taxi.start_fare()
                 current_taxi.drive(distance_to_travel)
-                current_fare = current_taxi.get_fare()
-                print("Your {0} trip cost you ${1:.2f}".format(current_taxi.name, current_fare))
-                return current_fare
+                fare = current_taxi.get_fare()
+                print("Your {0} trip cost you ${1:.2f}".format(current_taxi.name, fare))
+                return fare
         except ValueError:
             print("Invalid distance")
     return 0.0
