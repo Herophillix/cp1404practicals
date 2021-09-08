@@ -3,6 +3,8 @@
 
 class Car:
     """Represent a Car object."""
+    fuel_usage_multiplier = 1
+    fuel_efficiency_multiplier = 1
 
     def __init__(self, name: str, fuel=0):
         """Initialise a Car instance.
@@ -10,6 +12,8 @@ class Car:
         """
         self.name = name
         self.fuel = fuel
+        self.fuel_usage_multiplier = Car.fuel_usage_multiplier
+        self.fuel_efficiency_multiplier = Car.fuel_efficiency_multiplier
         self.odometer = 0
 
     def __str__(self):
@@ -25,10 +29,13 @@ class Car:
         Drive given distance if car has enough fuel
         or drive until fuel runs out return the distance actually driven.
         """
-        if distance > self.fuel:
+        fuel_usage = distance * self.fuel_usage_multiplier
+        if fuel_usage > self.fuel:
             distance = self.fuel
             self.fuel = 0
         else:
-            self.fuel -= distance
-        self.odometer += distance
-        return distance
+            self.fuel -= fuel_usage
+
+        distance_travelled = distance * self.fuel_efficiency_multiplier
+        self.odometer += distance_travelled
+        return distance_travelled
