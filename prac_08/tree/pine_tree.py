@@ -33,7 +33,7 @@ class PineTree(Tree):
     def grow(self, sunlight, water):
         """Grow a tree based on the sunlight and water parameters.
         Randomly grow the trunk height by a number between 0 and water.
-        Randomly increase the leaves by a number between 0 and sunlight."""
+        Randomly increase the row of leaves if a random number between 0 and sunlight is greater than 2"""
         self._trunk_height += random.randint(0, water)
         self.row_leaves += 1 if random.randint(0, sunlight) > 2 else 0
 
