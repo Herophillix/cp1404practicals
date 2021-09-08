@@ -1,9 +1,20 @@
 """
 Represent a tree that has fruit as well as leaves
 """
+import math
 import random
 
 from tree import Tree
+
+
+def clamp(value: float, min_value: float, max_value: float):
+    """Clamp a number within a range"""
+    max_value = max_value if min_value < max_value else max_value
+    if value < min_value:
+        value = min_value
+    elif value > max_value:
+        value = max_value
+    return value
 
 
 class FruitTree(Tree):
@@ -37,3 +48,4 @@ class FruitTree(Tree):
         super().grow(sunlight, water)
         self._fruits += random.randint(0, 1)
         self._fruits -= 1 if random.randint(0, 4) == 0 else 0
+        self._fruits = clamp(self._fruits, 0, math.inf)
