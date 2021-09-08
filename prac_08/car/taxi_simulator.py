@@ -38,19 +38,20 @@ def drive_taxi(current_taxi):
                 print("Distance must be > 0")
             else:
                 current_taxi.start_fare()
-                current_taxi.drive(distance_to_travel)
+                distance = current_taxi.drive(distance_to_travel)
                 fare = current_taxi.get_fare()
                 print("Your {0} trip cost you ${1:.2f}".format(current_taxi.name, fare))
-                return fare
+                return distance, fare
         except ValueError:
             print("Invalid distance")
-    return 0.0
+    return 0.0, 0.0
 
 
 def main():
     """Simulate movement of a taxi"""
     is_program_ended = False
-    total_bill = 0
+    total_distance = 0.0
+    total_bill = 0.0
     current_taxi = None
 
     print("Let's drive!")
@@ -62,10 +63,13 @@ def main():
         elif user_input == 'c':
             current_taxi = choose_taxi()
         elif user_input == 'd':
-            total_bill += drive_taxi(current_taxi)
+            distance, fare = drive_taxi(current_taxi)
+            total_distance += distance
+            total_bill += fare
         else:
             print("Invalid option")
         print("Bill to date: ${0:.2f}".format(total_bill))
+        print("Total distance travelled: {0} km".format(total_distance))
     print("Taxis are now:")
     print_taxis_available()
 

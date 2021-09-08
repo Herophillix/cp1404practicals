@@ -22,11 +22,13 @@ class SilverServiceTaxi(Taxi):
     def __init__(self, name: str, fuel=0, fanciness=1):
         """Constructor"""
         super().__init__(name, fuel)
-        self.price_per_km = Taxi.price_per_km * clamp(fanciness, 1, math.inf)
+        self.fanciness = clamp(fanciness, 1, math.inf)
+        self.price_per_km = Taxi.price_per_km * self.fanciness
 
     def __str__(self):
         """Description of the class"""
-        return super().__str__() + " plus flag fall of ${0:.2f}".format(SilverServiceTaxi.flag_fall)
+        return super().__str__() + ", fanciness={0}, plus flag fall of ${1:.2f}".format(self.fanciness,
+                                                                                      SilverServiceTaxi.flag_fall)
 
     def get_fare(self):
         """Get the price of the taxi ride"""
