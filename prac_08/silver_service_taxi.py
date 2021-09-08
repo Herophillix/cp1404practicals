@@ -17,7 +17,7 @@ def clamp(value: float, min_value: float, max_value: float):
 
 class SilverServiceTaxi(Taxi):
     """Class describing SilverServiceTaxi and its functionality"""
-    flagfall = 4.50
+    flag_fall = 4.50
 
     def __init__(self, name: str, fuel=0, fanciness=1):
         """Constructor"""
@@ -26,8 +26,8 @@ class SilverServiceTaxi(Taxi):
 
     def __str__(self):
         """Description of the class"""
-        return super().__str__() + " plus flagfall of ${0:.2f}".format(SilverServiceTaxi.flagfall)
+        return super().__str__() + " plus flag fall of ${0:.2f}".format(SilverServiceTaxi.flag_fall)
 
     def get_fare(self):
         """Get the price of the taxi ride"""
-        return super().get_fare() + SilverServiceTaxi.flagfall
+        return super().get_fare() + SilverServiceTaxi.flag_fall
