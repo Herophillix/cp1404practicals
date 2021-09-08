@@ -27,11 +27,10 @@ def choose_taxi():
     return None
 
 
-def drive_taxi(current_taxi) -> int:
+def drive_taxi(current_taxi):
     """Drive a taxi for a certain amount of distance"""
     if current_taxi is None:
         print("You need to choose a taxi before you can drive")
-        return 0
     else:
         try:
             distance_to_travel = float(input("Drive how far? "))
@@ -45,7 +44,7 @@ def drive_taxi(current_taxi) -> int:
                 return current_fare
         except ValueError:
             print("Invalid distance")
-    return 0
+    return 0.0
 
 
 def main():
