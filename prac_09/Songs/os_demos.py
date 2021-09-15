@@ -14,7 +14,7 @@ def main():
     os.chdir('Lyrics/Christmas')
 
     # Print a list of all files in current directory
-    print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
+    print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('..')))
 
     # Make a new directory
     # The next time you run this, it will crash if the directory exists
@@ -25,7 +25,7 @@ def main():
         pass
 
     # Loop through each file in the (current) directory
-    for filename in os.listdir('.'):
+    for filename in os.listdir('..'):
         # Ignore directories, just process files
         if os.path.isdir(filename):
             continue
@@ -50,7 +50,7 @@ def get_fixed_filename(filename):
 def demo_walk():
     """Process all subdirectories using os.walk()."""
     os.chdir('Lyrics')
-    for directory_name, subdirectories, filenames in os.walk('.'):
+    for directory_name, subdirectories, filenames in os.walk('..'):
         print("Directory:", directory_name)
         print("\tcontains subdirectories:", subdirectories)
         print("\tand files:", filenames)
